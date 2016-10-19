@@ -54,3 +54,27 @@ create (Google: Empresa)
 create (AgroProductos: Empresa)
 create (JabonesOnline: Empresa)
 
+Create
+(Arturo)-[:ConAptitud]->(Lider), 
+(Kevin)-[:LeInteresa]->(Cinematografia), 
+(Marty)-[:TrabajaEn]->(Google), 
+(Emmet)-[:TrabajaEn]->(Google),
+(Sylvia)-[:TrabajaEn]->(Google),
+(Sam)-[:TrabajaEn]->(Google),
+(Marty)-[:ConAptitud]->(Dedicacion), 
+(Emmet)-[:ConAptitud]->(Preciso), 
+(Sylvia)-[:ConAptitud]->(Rudimentario), 
+(Sam)-[:ConAptitud]->(Rudimentario),
+(Rudimentario)-[:CombinaCon]->(Lider),
+(Motivador)-[:CombinaCon]->(Creativo),
+(Ordenado)-[:CombinaCon]->(Comprometido),
+(Marty)-[:TrabajadoEn]->(ProtesisRD), 
+(Arturo)-[:TrabajadoEn]->(ProteinasRD),
+(Sylvia)-[:TrabajadoEn]->(NanobotsEnARM), 
+(Emmet)-[:Sabe]->(Java), 
+(Emmet)-[:Sabe]->(C), 
+(Emmet)-[:Sabe]->(Python),
+(Marty)-[:Sabe]->(Java), 
+(Google)-[:TrabajaEn]->(Java),
+(Kevin)-[:Sabe]->Java, 
+
