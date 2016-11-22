@@ -37,8 +37,8 @@ public class Conexion {
         stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{name:"+r.getNombre()+",pbx:"+r.getpbx()+",ubicacion:"+r.getDireccion()+",Mision:"+r.getMision()+ ",Vision:"+ r.getVision() + "})");
     }
     
-    public void crearCliente(Usuario e, Empresa r){
-    	stmt.executeUpdate("CREATE(" + e.getNombre() + ")-[:]->(" + + "})");
+    public void crearPlaza(Usuario e, Empresa r){
+    	stmt.executeUpdate("MATCH(" + e.getNombre() + ")-[:leInteresa]->(" + e.getInteres1() + ")<-[:leInteresa]-(" + r.getNombre()")<-[:perteneceA]-() " + "})");
         
     } 
     
