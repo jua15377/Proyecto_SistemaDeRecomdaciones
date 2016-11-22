@@ -7,6 +7,7 @@
  * 		 Javier Jo, 		Carnet: 14343
  *   Algoritmos y Estructura de Datos, Seccion: 30
  *******************************************************************************/
+import java.util.ArrayList;
 
 public class Usuario {
     private String nombre;
@@ -19,6 +20,8 @@ public class Usuario {
 
     private final String[] lenguajes = {"Java", "C++", "Python", "C", "MySQL", ".Net", "SQLite", "C#", "JavaScript", "php", "ARM", "Cypher"};
     private boolean[] conocimiento = new boolean[12];
+
+    public final String[] temas = {"Ciencias Formales", "Ciencias Sociales", "Relaciones Humanas", "Entretenimiento", "Naturaleza", "Ciencias Naturales", "Arte", "Tecnologia"};
 
     private int edad;
     private int telefono;
@@ -98,4 +101,160 @@ public class Usuario {
 
     public void setContrasena(String contrasena){this.contrasena = contrasena;}
 
+    /*-------------------------------------------------------------------*/
+    public void intereses(boolean[] datos){
+        ArrayList<Integer> interesesAcumulados = new ArrayList<>();
+
+        if(datos[0]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+        }
+        if(datos[1]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+        }
+        if(datos[2]){
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+        }
+        if(datos[3]){
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[4]){
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[5]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+        }
+        if(datos[6]){
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+        }
+        if(datos[7]){
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+        }
+        if(datos[8]){
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+        }
+        if(datos[9]){
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[10]){
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+        }
+        if(datos[11]){
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[12]){
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[13]){
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+
+        }if(datos[14]){
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[15]){
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[16]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+        }
+        if(datos[17]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+
+        }if(datos[18]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+        }
+        if(datos[19]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+
+        }if(datos[20]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[21]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+
+        }if(datos[22]){
+            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[23]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+        }
+        if(datos[24]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+        }
+        if(datos[25]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+
+        }if(datos[26]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[27]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+        }
+        if(datos[28]){
+            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+        if(datos[29]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+        }
+        if(datos[30]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+        }
+        if(datos[31]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+        }
+        if(datos[32]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+        }
+        if(datos[33]){
+            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+        }
+
+        int numero = 0;
+        int index1 = 0;
+        for(int elemento: interesesAcumulados){
+            if (elemento > numero){
+                numero = elemento;
+                index1 = interesesAcumulados.indexOf(elemento);
+            }
+        }
+
+        numero = 0;
+        int index2 = 0;
+
+        for(int elemento: interesesAcumulados){
+            if(elemento> numero && interesesAcumulados.indexOf(elemento) != index1){
+                numero = elemento;
+                index2 = interesesAcumulados.indexOf(elemento);
+            }
+        }
+
+        this.setInteres1(temas[index1]);
+        this.setInteres2(temas[index2]);
+
+    }
 }
