@@ -17,7 +17,7 @@ public class Usuario {
     private String direccion;
     private String horarioInicio;
     private String horarioFinal;
-    private boolean[] answers = new boolean[34];
+
     private final String[] lenguajes = {"Java", "C++", "Python", "C", "MySQL", ".Net", "SQLite", "C#", "JavaScript", "php", "ARM", "Cypher"};
     private boolean[] conocimiento = new boolean[12];
 
@@ -72,10 +72,8 @@ public class Usuario {
 
     public String getContrasena(){return contrasena;}
 
-    public boolean[] getAnswers(){return answers;}
 
 /*--------------------------------------------------------------------------*/
-    public void setAnswers(boolean[] matriz){this.answers = matriz;}
 
     public void setNombre(String nombre){this.nombre = nombre;}
 
@@ -104,9 +102,8 @@ public class Usuario {
     public void setContrasena(String contrasena){this.contrasena = contrasena;}
 
     /*-------------------------------------------------------------------*/
-    public void intereses(){
+    public void intereses(boolean[] datos){
         ArrayList<Integer> interesesAcumulados = new ArrayList<>();
-        boolean[] datos = this.getAnswers();
 
         if(datos[0]){
             interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
