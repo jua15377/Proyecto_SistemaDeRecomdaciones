@@ -1,6 +1,4 @@
 
-import sun.plugin2.gluegen.runtime.CPU;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -65,7 +63,7 @@ public class Cuestionario extends JFrame{
                     //creando intereses
                     user.setAnswers(respuestas);
                     user.intereses();
-                    conexion.unirIntereses(user);
+                    //conexion.unirIntereses(user);
                     //cierra ventana
                     dispose();
                 }

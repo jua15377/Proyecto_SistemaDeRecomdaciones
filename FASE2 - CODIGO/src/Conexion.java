@@ -32,6 +32,7 @@ public class Conexion {
     public void crearInteres(String e){
         try {
             stmt.executeUpdate("CREATE(" +e+ ":Interes{nombre:'" +e+ "'})");
+            con.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -40,6 +41,7 @@ public class Conexion {
     public void crearUsuario(Usuario e){
         try {
             stmt.executeUpdate("CREATE(" +e.getNombre()+ ":Usuario{usuario:'" +e.getUsuario() + "',contrasena:'" + e.getContrasena() +  "',name:'" +e.getNombre()+ "',correo:'" +e.getCorreo()+ "',edad:'" +e.getEdad()+ "',direccion:'" + e.getDireccion() + "',telefono:'" + e.getTelefono() + "',horarioEntrada:'" + e.getHorarioInicio() + "',horarioSalida:'" + e.getHorarioFinal() + "'})");
+            con.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -48,6 +50,7 @@ public class Conexion {
     public void crearEmpresa(Empresa r){
         try {
             stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{name:'"+r.getNombre()+"',pbx:'"+r.getpbx()+"',ubicacion:'"+r.getDireccion()+"'})");
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,12 +60,14 @@ public class Conexion {
     public void unirIntereses(Usuario e ){
         try {
             stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres1()+  ")");
+            con.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
 
         try {
             stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres2()+  ")");
+            con.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -75,6 +80,7 @@ public class Conexion {
         try {
             stmt.executeUpdate("MATCH (n) " +
                     "OPTIONAL MATCH (n)-[r]-()"+" delete n,r" );
+            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
