@@ -32,7 +32,7 @@ public class FormularioRegistro extends JFrame{
     private JLabel lbl9;
     private JLabel lbl11;
     public  Conexion conexion = new Conexion();
-    public  Usuario usuario = new Usuario("a","b","");
+    public  Usuario usuario = new Usuario("a","b","c","d","f","g","h",1,3,4);
     public  FormularioRegistro(){
         setContentPane(rootRegistro);
         setVisible(true);
