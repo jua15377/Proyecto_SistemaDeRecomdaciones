@@ -58,16 +58,34 @@ Create
 (Sam)-[:leInteresa]->(Entretenimiento)
 (Kevin)-[:leInteresa]->(RelacionesHumanas)
 (Raymond)-[:leInteresa]->(RelacionesHumanas)
-(Diego)-[:leInteresa]->(
-(Diego)-[:leInteresa]->(
-(Dieter)-[:leInteresa]->(
-(Dieter)-[:leInteresa]->(
-(Ana)-[:leInteresa]->(
-(Ana)-[:leInteresa]->(
-(Michelle)-[:leInteresa]->(
-(Michelle)-[:leInteresa]->(
-(Jorge)-[:leInteresa]->(
-(Jorge)-[:leInteresa]->(
+(Diego)-[:leInteresa]->(CienciasSociales)
+(Diego)-[:leInteresa]->(Entretenimiento)
+(Dieter)-[:leInteresa]->(RelacionesHumanas)
+(Dieter)-[:leInteresa]->(Artes)
+(Ana)-[:leInteresa]->(Tecnologia)
+(Ana)-[:leInteresa]->(Entretenimiento)
+(Michelle)-[:leInteresa]->(CienciasFormales)
+(Michelle)-[:leInteresa]->(Naturaleza)
+(Jorge)-[:leInteresa]->(CienciasNaturales)
+(Jorge)-[:leInteresa]->(CienciasSociales)
+
+(PurinaDogChow)-[:Tiene]->(PerrosInteligentes)
+(Brainz)-[:Tiene]->(JuegosProductoresDeOxigeno)
+(Google)-[:Tiene]->(NanobotsEnARM)
+(AgroProductos)-[:Tiene]->(PlantasBuffeadas)
+(MecanoCreaciones)-[:Tiene]->(ProtesisRD)
+(NoticiasPuntuales)-[:Tiene]->(HallazgosArtisticos)
+(GeologiaDelMundo)-[:Tiene]->(DronesParaCuevasSubterraneas)
+
+
+(PurinaDogChow)-[:leInteresa]->(RelacionesHumanas)
+(Brainz)-[:leInteresa]->(Entretenimiento)
+(Google)-[:leInteresa]->(Tecnologia)
+(AgroProductos)-[:leInteresa]->(Naturaleza)
+(MecanoCreaciones)-[:leInteresa]->(Tecnologia)
+(NoticiasPuntuales)-[:leInteresa]->(Arte)
+(GeologiaDelMundo)-[:leInteresa]->(CienciasSociales)
+
 
 
 
