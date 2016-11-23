@@ -1,80 +1,77 @@
 
-create (Arturo: Usuario{nombre: 'Arturo Medina', edad: '45'})
-create (Kevin: Usuario{nombre: 'Kevin Flynn', edad: '50'})
-create (Sam: Usuario{nombre: 'Sam Flynn', edad: '25'})
-create (Sylvia: Usuario{nombre: 'Sylvia Weis', edad: '30'})
-create (Will: Usuario{nombre: 'Will Salas', edad: '29'})
-create (Raymond: Usuario{nombre: 'Raymond Leon', edad: '18'})
-create (Henry: Usuario{nombre: 'Henry Hamilton', edad: '26'})
-create (Marty: Usuario{nombre: 'Marty McFly', edad: '40'})
-create (Emmet: Usuario{nombre: 'Emmet Brown', edad: '84'})
+create (Arturo: Usuario{usuario: 'arty', contrasena: 'arty', nombre: 'Arturo Medina', edad: '45'})
+create (Kevin: Usuario{usuario: 'kev', contrasena: 'kev', nombre: 'Kevin Flynn', edad: '50'})
+create (Sam: Usuario{usuario: 'sam', contrasena: 'sam', nombre: 'Sam Flynn', edad: '25'})
+create (Sylvia: Usuario{usuario: 'syl', contrasena: 'vana', nombre: 'Sylvia Weis', edad: '30'})
+create (Will: Usuario{usuario: 'will', contrasena: 'will',nombre: 'Will Salas', edad: '29'})
+create (Raymond: Usuario{usuario: 'ray', contrasena: 'ray',nombre: 'Raymond Leon', edad: '18'})
+create (Henry: Usuario{usuario: 'hen', contrasena: 'hen',nombre: 'Henry Hamilton', edad: '26'})
+create (Marty: Usuario{usuario: 'marty', contrasena: 'marty',nombre: 'Marty McFly', edad: '40'})
+create (Emmet: Usuario{usuario: 'Doc', contrasena: 'Doc',nombre: 'Emmet Brown', edad: '84'})
+create (Diego : Usuario{usuario: 'die', contrasena: 'dieg',nombre: 'Diego Lopez', edad: '19'})
+create (Michelle : Usuario{usuario: 'mich', contrasena: 'mich',nombre: 'Michelle Morales', edad: '19'})
+create (Jorge : Usuario{usuario: 'sol', contrasena: 'sol',nombre: 'Jorge Solares', edad: '19'})
+create (Dieter : Usuario{usuario: 'die', contrasena: 'die',nombre: 'Dieter de Wit', edad: '19'})
+create (Ana : Usuario{usuario: 'ana', contrasena: 'ana',nombre: 'Ana Lucia Diaz', edad: '20'})
 
-create (Neurociencia: Interes)
-create (Nanotecnologia: Interes)
-create (Protesis: Interes)
-create (Homeopatia: Interes)
-create (Bolsa: Interes)
-create (Cinematografia: Interes)
-create (Deportes: Interes)
-create (RelacionesHumanas: Interes)
-create (Psicologia: Interes)
-create (Aeronautica: Interes)
-create (Bioinformatica: Interes)
-create (neurotecnologia: Interes)
-create (DisenodeJuegos: Interes)
-create (Medioambiente: Interes)
-create (HPU: Interes)
-create (LenguajedeBajoNivel: Interes)
-create (RealidadVirtual: Interes)
-create (Animacion: Interes)
-create (Comunicaciones: Interes)
 
-create (Lider: Aptitud)
-create (Rudimentario: Aptitud)
-create (Ordenado: Aptitud)
-create (Preciso: Aptitud)
-create (Motivador: Aptitud)
-create (Dedicacion: Aptitud)
-create (Comprometido: Aptitud)
-create (Creativo: Aptitud)
+create (CienciasFormales: Interes{nombre: 'CienciasFormales'})
+create (CienciasFormales: Interes{nombre: 'CienciasFormales'})
+create (CienciasNaturales: Interes{nombre: 'CienciasNaturales'})
+create (Naturaleza: Interes{nombre: 'Naturaleza'})
+create (Arte: Interes{nombre: 'Arte'})
+create (Tecnologia: Interes{nombre: 'Tecnologia'})
+create (Entretenimiento: Interes{nombre: 'Entretenimiento'})
+create (RelacionesHumanas: Interes{nombre: 'RelacionesHumanas'})
 
-create (ProtesisRD: Proyecto)
-create (JuegosProductoresDeOxigeno: Proyecto)
-create (NanobotsEnARM: Proyecto)
-
-create (Java: Lenguaje)
-create (C: Lenguaje)
-create (PHP: Lenguaje)
-create (Python: Lenguaje)
-create (VisualBasic: Lenguaje)
+create (ProtesisRD: Proyecto{nombre: 'ProtesisRD'})
+create (JuegosProductoresDeOxigeno: Proyecto{nombre: 'JuegosProductoresDeOxigeno'})
+create (NanobotsEnARM: Proyecto{nombre: 'NanobotsEnARM'})
+create (PerrosInteligentes: Proyecto{nombre: 'PerrosInteligentes'})
+create (PlantasBuffeadas: Proyectos{nombre: 'PlantasBuffeadas'})
+create (HallazgosArtisticos: Proyecto{nombre: 'HallazgosArtisticos'})
+create (DronesParaCuevasSubterraneas: Proyecto{nombre: 'DronesParaCuevasSubterraneas'})
 
 create (PurinaDogChow: Empresa)
 create (Brainz: Empresa)
 create (Google: Empresa)
 create (AgroProductos: Empresa)
-create (JabonesOnline: Empresa)
+create (MecanoCreaciones: Empresa)
+create (NoticiasPuntuales:Empresa)
+create (GeologiaDelMundo:Empresa)
+
 
 Create
-(Arturo)-[:ConAptitud]->(Lider), 
-(Kevin)-[:LeInteresa]->(Cinematografia), 
-(Marty)-[:TrabajaEn]->(Google), 
-(Emmet)-[:TrabajaEn]->(Google),
-(Sylvia)-[:TrabajaEn]->(Google),
-(Sam)-[:TrabajaEn]->(Google),
-(Marty)-[:ConAptitud]->(Dedicacion), 
-(Emmet)-[:ConAptitud]->(Preciso), 
-(Sylvia)-[:ConAptitud]->(Rudimentario), 
-(Sam)-[:ConAptitud]->(Rudimentario),
-(Rudimentario)-[:CombinaCon]->(Lider),
-(Motivador)-[:CombinaCon]->(Creativo),
-(Ordenado)-[:CombinaCon]->(Comprometido),
-(Marty)-[:TrabajadoEn]->(ProtesisRD), 
-(Arturo)-[:TrabajadoEn]->(ProteinasRD),
-(Sylvia)-[:TrabajadoEn]->(NanobotsEnARM), 
-(Emmet)-[:Sabe]->(Java), 
-(Emmet)-[:Sabe]->(C), 
-(Emmet)-[:Sabe]->(Python),
-(Marty)-[:Sabe]->(Java), 
-(Google)-[:TrabajaEn]->(Java),
-(Kevin)-[:Sabe]->Java, 
+(Arturo)-[:leInteresa]->(CienciasFormales)
+(Emmet)-[:leInteresa]->(CienciasFormales)
+(Kevin)-[:leInteresa]->(CienciasSociales)
+(Marty)-[:leInteresa]->(CienciasSociales)
+(Sam)-[:leInteresa]->(CienciasNaturales)
+(Henry)-[:leInteresa]->(CienciasNaturales)
+(Sylvia)-[:leInteresa]->(Naturaleza)
+(Raymond)-[:leInteresa]->(Naturaleza)
+(Arturo)-[:leInteresa]->(Arte)
+(Henry)-[:leInteresa]->(Arte)
+(Marty)-[:leInteresa]->(Tecnologia)
+(Sylvia)-[:leInteresa]->(Tecnologia)
+(Emmet)-[:leInteresa]->(Entretenimiento)
+(Sam)-[:leInteresa]->(Entretenimiento)
+(Kevin)-[:leInteresa]->(RelacionesHumanas)
+(Raymond)-[:leInteresa]->(RelacionesHumanas)
+(Diego)-[:leInteresa]->(
+(Diego)-[:leInteresa]->(
+(Dieter)-[:leInteresa]->(
+(Dieter)-[:leInteresa]->(
+(Ana)-[:leInteresa]->(
+(Ana)-[:leInteresa]->(
+(Michelle)-[:leInteresa]->(
+(Michelle)-[:leInteresa]->(
+(Jorge)-[:leInteresa]->(
+(Jorge)-[:leInteresa]->(
+
+
+
+
+
+
 
