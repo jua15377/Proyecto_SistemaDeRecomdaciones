@@ -15,7 +15,7 @@ create (Dieter : Usuario{usuario: 'die', contrasena: 'die',nombre: 'Dieter de Wi
 create (Ana : Usuario{usuario: 'ana', contrasena: 'ana',nombre: 'Ana Lucia Diaz', edad: '20'})
 
 
-create (CienciasFormales: Interes{nombre: 'CienciasFormales'})
+create (CienciasSociales: Interes{nombre: 'CienciasSociales'})
 create (CienciasFormales: Interes{nombre: 'CienciasFormales'})
 create (CienciasNaturales: Interes{nombre: 'CienciasNaturales'})
 create (Naturaleza: Interes{nombre: 'Naturaleza'})
@@ -42,63 +42,65 @@ create (GeologiaDelMundo:Empresa)
 
 
 Create
-(Arturo)-[:leInteresa]->(CienciasFormales)
-(Emmet)-[:leInteresa]->(CienciasFormales)
-(Kevin)-[:leInteresa]->(CienciasSociales)
-(Marty)-[:leInteresa]->(CienciasSociales)
-(Sam)-[:leInteresa]->(CienciasNaturales)
-(Henry)-[:leInteresa]->(CienciasNaturales)
-(Sylvia)-[:leInteresa]->(Naturaleza)
-(Raymond)-[:leInteresa]->(Naturaleza)
-(Arturo)-[:leInteresa]->(Arte)
-(Henry)-[:leInteresa]->(Arte)
-(Marty)-[:leInteresa]->(Tecnologia)
-(Sylvia)-[:leInteresa]->(Tecnologia)
-(Emmet)-[:leInteresa]->(Entretenimiento)
-(Sam)-[:leInteresa]->(Entretenimiento)
-(Kevin)-[:leInteresa]->(RelacionesHumanas)
-(Raymond)-[:leInteresa]->(RelacionesHumanas)
-(Diego)-[:leInteresa]->(CienciasSociales)
-(Diego)-[:leInteresa]->(Entretenimiento)
-(Dieter)-[:leInteresa]->(RelacionesHumanas)
-(Dieter)-[:leInteresa]->(Artes)
-(Ana)-[:leInteresa]->(Tecnologia)
-(Ana)-[:leInteresa]->(Entretenimiento)
-(Michelle)-[:leInteresa]->(CienciasFormales)
-(Michelle)-[:leInteresa]->(Naturaleza)
-(Jorge)-[:leInteresa]->(CienciasNaturales)
+(Arturo)-[:leInteresa]->(CienciasFormales),
+(Emmet)-[:leInteresa]->(CienciasFormales),
+(Kevin)-[:leInteresa]->(CienciasSociales),
+(Marty)-[:leInteresa]->(CienciasSociales),
+(Sam)-[:leInteresa]->(CienciasNaturales),
+(Henry)-[:leInteresa]->(CienciasNaturales),
+(Sylvia)-[:leInteresa]->(Naturaleza),
+(Raymond)-[:leInteresa]->(Naturaleza),
+(Arturo)-[:leInteresa]->(Arte),
+(Henry)-[:leInteresa]->(Arte),
+(Marty)-[:leInteresa]->(Tecnologia),
+(Sylvia)-[:leInteresa]->(Tecnologia),
+(Emmet)-[:leInteresa]->(Entretenimiento),
+(Sam)-[:leInteresa]->(Entretenimiento),
+(Kevin)-[:leInteresa]->(RelacionesHumanas),
+(Raymond)-[:leInteresa]->(RelacionesHumanas),
+(Diego)-[:leInteresa]->(CienciasSociales),
+(Diego)-[:leInteresa]->(Entretenimiento),
+(Dieter)-[:leInteresa]->(RelacionesHumanas),
+(Dieter)-[:leInteresa]->(Artes),
+(Ana)-[:leInteresa]->(Tecnologia),
+(Ana)-[:leInteresa]->(Entretenimiento),
+(Michelle)-[:leInteresa]->(CienciasFormales),
+(Michelle)-[:leInteresa]->(Naturaleza),
+(Jorge)-[:leInteresa]->(CienciasNaturales),
 (Jorge)-[:leInteresa]->(CienciasSociales)
 
-(Arturo)-[:TrabajaEn]->(PurinaDogChow)
-(Kevin)-[:TrabajaEn]->(Brainz)
-(Sam)-[:TrabajaEn]->(Google)
-(Sylvia)-[:TrabajaEn]->(AgroProductos)
-(Will)-[:TrabajaEn]->(MecanoCreaciones)
-(Raymond)-[:TrabajaEn]->(NoticiasPuntuales)
-(Henry)-[:TrabajaEn]->(GeologiaDelMundo)
-(Marty)-[:TrabajaEn]->(PurinaDogChow)
-(Emmet)-[:TrabajaEn]->(Brainz)
-(Diego)-[:TrabajaEn]->(Google)
-(Michelle)-[:TrabajaEn]->(AgroProductos)
-(Jorge)-[:TrabajaEn]->(MecanoCreaciones)
-(Dieter)-[:TrabajaEn]->(NoticiasPuntuales)
+Create
+(Arturo)-[:TrabajaEn]->(PurinaDogChow),
+(Kevin)-[:TrabajaEn]->(Brainz),
+(Sam)-[:TrabajaEn]->(Google),
+(Sylvia)-[:TrabajaEn]->(AgroProductos),
+(Will)-[:TrabajaEn]->(MecanoCreaciones),
+(Raymond)-[:TrabajaEn]->(NoticiasPuntuales),
+(Henry)-[:TrabajaEn]->(GeologiaDelMundo),
+(Marty)-[:TrabajaEn]->(PurinaDogChow),
+(Emmet)-[:TrabajaEn]->(Brainz),
+(Diego)-[:TrabajaEn]->(Google),
+(Michelle)-[:TrabajaEn]->(AgroProductos),
+(Jorge)-[:TrabajaEn]->(MecanoCreaciones),
+(Dieter)-[:TrabajaEn]->(NoticiasPuntuales),
 (Ana)-[:TrabajaEn]->(GeologiaDelMundo)
 
-(PurinaDogChow)-[:Tiene]->(PerrosInteligentes)
-(Brainz)-[:Tiene]->(JuegosProductoresDeOxigeno)
-(Google)-[:Tiene]->(NanobotsEnARM)
-(AgroProductos)-[:Tiene]->(PlantasBuffeadas)
-(MecanoCreaciones)-[:Tiene]->(ProtesisRD)
-(NoticiasPuntuales)-[:Tiene]->(HallazgosArtisticos)
+Create
+(PurinaDogChow)-[:Tiene]->(PerrosInteligentes),
+(Brainz)-[:Tiene]->(JuegosProductoresDeOxigeno),
+(Google)-[:Tiene]->(NanobotsEnARM),
+(AgroProductos)-[:Tiene]->(PlantasBuffeadas),
+(MecanoCreaciones)-[:Tiene]->(ProtesisRD),
+(NoticiasPuntuales)-[:Tiene]->(HallazgosArtisticos),
 (GeologiaDelMundo)-[:Tiene]->(DronesParaCuevasSubterraneas)
 
-
-(PurinaDogChow)-[:leInteresa]->(RelacionesHumanas)
-(Brainz)-[:leInteresa]->(Entretenimiento)
-(Google)-[:leInteresa]->(Tecnologia)
-(AgroProductos)-[:leInteresa]->(Naturaleza)
-(MecanoCreaciones)-[:leInteresa]->(Tecnologia)
-(NoticiasPuntuales)-[:leInteresa]->(Arte)
+create 
+(PurinaDogChow)-[:leInteresa]->(RelacionesHumanas),
+(Brainz)-[:leInteresa]->(Entretenimiento),
+(Google)-[:leInteresa]->(Tecnologia),
+(AgroProductos)-[:leInteresa]->(Naturaleza),
+(MecanoCreaciones)-[:leInteresa]->(Tecnologia),
+(NoticiasPuntuales)-[:leInteresa]->(Arte),
 (GeologiaDelMundo)-[:leInteresa]->(CienciasSociales)
 
 
