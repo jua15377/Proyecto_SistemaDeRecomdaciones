@@ -29,6 +29,14 @@ public class Conexion {
         }
     }
 
+    public void crearInteres(String e){
+        try {
+            stmt.executeUpdate("CREATE(" +e+ ":Interes{nombre:" +e+ "})");
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+    }
+
     public void crearUsuario(Usuario e){
         try {
             stmt.executeUpdate("CREATE(" +e.getNombre()+ ":Usuario{usuario:" +e.getUsuario() + ",contrasena:" + e.getContrasena() +  ",name:" +e.getNombre()+ ",correo:" +e.getCorreo()+ ",edad:" +e.getEdad()+ " ,direccion:" + e.getDireccion() + ",telefono:" + e.getTelefono() + ",horarioEntrada:" + e.getHorarioInicio() + ",horarioSalida:" + e.getHorarioFinal() + "})");
