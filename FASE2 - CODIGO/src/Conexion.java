@@ -15,7 +15,7 @@ public class Conexion {
     private Connection con;
     private Statement stmt;
     private final String USER="neo4j";
-    private final String PASSWORD="neoj4";
+    private final String PASSWORD="123456789";
     static final String URL="jdbc:neo4j:bolt://localhost";
 
     //constructor
@@ -31,7 +31,7 @@ public class Conexion {
 
     public void crearInteres(String e){
         try {
-            stmt.executeUpdate("CREATE(" +e+ ":Interes{nombre:" +e+ "})");
+            stmt.executeUpdate("CREATE(" +e+ ":Interes{nombre:'" +e+ "'})");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -39,7 +39,7 @@ public class Conexion {
 
     public void crearUsuario(Usuario e){
         try {
-            stmt.executeUpdate("CREATE(" +e.getNombre()+ ":Usuario{usuario:" +e.getUsuario() + ",contrasena:" + e.getContrasena() +  ",name:" +e.getNombre()+ ",correo:" +e.getCorreo()+ ",edad:" +e.getEdad()+ " ,direccion:" + e.getDireccion() + ",telefono:" + e.getTelefono() + ",horarioEntrada:" + e.getHorarioInicio() + ",horarioSalida:" + e.getHorarioFinal() + "})");
+            stmt.executeUpdate("CREATE(" +e.getNombre()+ ":Usuario{usuario:'" +e.getUsuario() + "',contrasena:'" + e.getContrasena() +  "',name:'" +e.getNombre()+ "',correo:'" +e.getCorreo()+ "',edad:'" +e.getEdad()+ "',direccion:'" + e.getDireccion() + "',telefono:'" + e.getTelefono() + "',horarioEntrada:'" + e.getHorarioInicio() + "',horarioSalida:'" + e.getHorarioFinal() + "'})");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -47,30 +47,22 @@ public class Conexion {
 
     public void crearEmpresa(Empresa r){
         try {
-            stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{name:"+r.getNombre()+",pbx:"+r.getpbx()+",ubicacion:"+r.getDireccion()+"})");
+            stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{name:'"+r.getNombre()+"',pbx:'"+r.getpbx()+"',ubicacion:'"+r.getDireccion()+"'})");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void crearPlaza(Usuario e, Empresa r){
-        try {
-            stmt.executeUpdate("MATCH(" + e.getNombre() + ")-[:leInteresa]->(" + e.getInteres1() + ")<-[:leInteresa]-(" + r.getNombre() + ")<-[:perteneceA]-() " + "})");
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-
-    }
 
     public void unirIntereses(Usuario e ){
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres1()+  ")");
+            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->('" + e.getInteres1()+  "')");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
 
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres2()+  ")");
+            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->('" + e.getInteres2()+  "')");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
