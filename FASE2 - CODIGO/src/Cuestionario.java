@@ -61,8 +61,10 @@ public class Cuestionario extends JFrame{
                     lblPregunta.setText("La encuesta finalizo");
                     JOptionPane.showMessageDialog(null, "Encuesta finalizada");
                     //creando intereses
+                    //for(boolean n: respuestas){System.out.println(n);}
                     user.setAnswers(respuestas);
                     user.intereses();
+                    System.out.println(user.getInteres1());
                     //conexion.unirIntereses(user);
                     //cierra ventana
                     dispose();

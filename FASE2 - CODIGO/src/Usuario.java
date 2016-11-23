@@ -7,7 +7,9 @@
  * 		 Javier Jo, 		Carnet: 14343
  *   Algoritmos y Estructura de Datos, Seccion: 30
  *******************************************************************************/
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Usuario {
     private String nombre;
@@ -17,7 +19,7 @@ public class Usuario {
     private String direccion;
     private String horarioInicio;
     private String horarioFinal;
-    private boolean[] answers = new boolean[34];
+    public boolean[] datos = new boolean[34];
 
     private final String[] lenguajes = {"Java", "C++", "Python", "C", "MySQL", ".Net", "SQLite", "C#", "JavaScript", "php", "ARM", "Cypher"};
     private boolean[] conocimiento = new boolean[12];
@@ -73,7 +75,7 @@ public class Usuario {
 
     public String getContrasena(){return contrasena;}
 
-    public boolean[] getAnswers() {return answers;}
+    public boolean[] getAnswers() {return datos;}
 /*--------------------------------------------------------------------------*/
 
     public void setNombre(String nombre){this.nombre = nombre;}
@@ -102,12 +104,14 @@ public class Usuario {
 
     public void setContrasena(String contrasena){this.contrasena = contrasena;}
 
-    public void setAnswers(boolean[] answers) {this.answers = answers;}
+    public void setAnswers(boolean[] answers) {this.datos = answers;}
 
     /*-------------------------------------------------------------------*/
     public void intereses(){
         ArrayList<Integer> interesesAcumulados = new ArrayList<>();
-        boolean[] datos = getAnswers();
+
+        for(boolean n: datos){System.out.println(n);}
+
         if(datos[0]){
             interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
         }
