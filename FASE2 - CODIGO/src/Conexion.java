@@ -9,6 +9,8 @@
  *******************************************************************************/
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.Map;
 
 
 public class Conexion {
@@ -73,6 +75,29 @@ public class Conexion {
         }
 
     }
+
+    public ArrayList<String> Recomendar(Usuario e){
+        ArrayList<String> retorno = new ArrayList<>();
+        ArrayList<String> temas = new ArrayList<>();
+
+        try {
+            ResultSet rs = stmt.executeQuery("MATCH (Usuario{name: '"+ e.getNombre()+"'})-{:leInteresa}->(tema)<-[:leInteresa]-(Empresa) return Empresa");
+            int i = 0;
+            while(rs.next()){
+                Map map = (Map)rs.getObject("Empresa");
+                String s = map.get("name").toString();
+                retorno.add(s);
+            }
+
+
+            con.close();
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return retorno;
+    }
+
 
 
 

@@ -7,9 +7,7 @@
  * 		 Javier Jo, 		Carnet: 14343
  *   Algoritmos y Estructura de Datos, Seccion: 30
  *******************************************************************************/
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Usuario {
     private String nombre;
@@ -19,7 +17,7 @@ public class Usuario {
     private String direccion;
     private String horarioInicio;
     private String horarioFinal;
-    public boolean[] datos = new boolean[34];
+    private boolean[] answers = new boolean[34];
 
     private final String[] lenguajes = {"Java", "C++", "Python", "C", "MySQL", ".Net", "SQLite", "C#", "JavaScript", "php", "ARM", "Cypher"};
     private boolean[] conocimiento = new boolean[12];
@@ -75,7 +73,7 @@ public class Usuario {
 
     public String getContrasena(){return contrasena;}
 
-    public boolean[] getAnswers() {return datos;}
+    public boolean[] getAnswers() {return answers;}
 /*--------------------------------------------------------------------------*/
 
     public void setNombre(String nombre){this.nombre = nombre;}
@@ -104,142 +102,147 @@ public class Usuario {
 
     public void setContrasena(String contrasena){this.contrasena = contrasena;}
 
-    public void setAnswers(boolean[] answers) {this.datos = answers;}
+    public void setAnswers(boolean[] answers) {this.answers = answers;}
 
     /*-------------------------------------------------------------------*/
     public void intereses(){
-        ArrayList<Integer> interesesAcumulados = new ArrayList<>();
-
-        for(boolean n: datos){System.out.println(n);}
+        int[] interesesAcumula2 = new int[8];
+        boolean[] datos = this.getAnswers();
 
         if(datos[0]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
         }
         if(datos[1]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
         }
         if(datos[2]){
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
         }
         if(datos[3]){
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[4]){
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[5]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
         }
         if(datos[6]){
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
         }
         if(datos[7]){
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
         }
         if(datos[8]){
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
         }
         if(datos[9]){
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[10]){
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
         }
         if(datos[11]){
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[12]){
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[13]){
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
-
-        }if(datos[14]){
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
+        }
+        if(datos[14]){
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[15]){
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[16]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
         }
         if(datos[17]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-
-        }if(datos[18]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+        }
+        if(datos[18]){
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
         }
         if(datos[19]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
-
-        }if(datos[20]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
+        }
+        if(datos[20]){
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[21]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
-
-        }if(datos[22]){
-            interesesAcumulados.add(5, interesesAcumulados.get(5)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
+        }
+        if(datos[22]){
+            interesesAcumula2[5] = interesesAcumula2[5] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[23]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
         }
         if(datos[24]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
         }
         if(datos[25]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
-
-        }if(datos[26]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
+        }
+        if(datos[26]){
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[27]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
         }
         if(datos[28]){
-            interesesAcumulados.add(1, interesesAcumulados.get(1)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[1] = interesesAcumula2[1] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
         if(datos[29]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-            interesesAcumulados.add(7, interesesAcumulados.get(7)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+            interesesAcumula2[7] = interesesAcumula2[7] + 1;
         }
         if(datos[30]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-            interesesAcumulados.add(6, interesesAcumulados.get(6)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+            interesesAcumula2[6] = interesesAcumula2[6] + 1;
         }
         if(datos[31]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-            interesesAcumulados.add(4, interesesAcumulados.get(4)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+            interesesAcumula2[4] = interesesAcumula2[4] + 1;
         }
         if(datos[32]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-            interesesAcumulados.add(2, interesesAcumulados.get(2)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+            interesesAcumula2[2] = interesesAcumula2[2] + 1;
         }
         if(datos[33]){
-            interesesAcumulados.add(0, interesesAcumulados.get(0)+1);
-            interesesAcumulados.add(3, interesesAcumulados.get(3)+1);
+            interesesAcumula2[0] = interesesAcumula2[0] + 1;
+            interesesAcumula2[3] = interesesAcumula2[3] + 1;
         }
+
+        ArrayList<Integer> interesesAcumulados = new ArrayList<>();
+        for (int n: interesesAcumula2){
+            interesesAcumulados.add(n);
+        }
+
 
         int numero = 0;
         int index1 = 0;
