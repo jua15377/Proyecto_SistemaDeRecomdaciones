@@ -15,7 +15,7 @@ public class Conexion {
     private Connection con;
     private Statement stmt;
     private final String USER="neo4j";
-    private final String PASSWORD="neoj4";
+    private final String PASSWORD="123456789";
     static final String URL="jdbc:neo4j:bolt://localhost";
 
     //constructor
