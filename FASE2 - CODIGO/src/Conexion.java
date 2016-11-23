@@ -56,13 +56,13 @@ public class Conexion {
 
     public void unirIntereses(Usuario e ){
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->('" + e.getInteres1()+  "')");
+            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres1()+  ")");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
 
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->('" + e.getInteres2()+  "')");
+            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres2()+  ")");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
