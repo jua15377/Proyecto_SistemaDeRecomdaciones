@@ -2,6 +2,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  * Created by Alejanddro on 22/11/2016.
@@ -65,7 +67,14 @@ public class Cuestionario extends JFrame{
                     user.setAnswers(respuestas);
                     user.intereses();
                     System.out.println(user.getInteres1());
-                    //conexion.unirIntereses(user);
+                    System.out.println(user.getInteres2());
+                    conexion.unirIntereses(user);
+                    conexion.unirIntereses2(user);
+
+                    ArrayList<String> Empresas = conexion.Recomendar(user);
+                    for (String n: Empresas){
+                        System.out.println(n);
+                    }
                     //cierra ventana
                     dispose();
                 }

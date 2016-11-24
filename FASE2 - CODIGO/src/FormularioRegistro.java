@@ -40,7 +40,7 @@ public class FormularioRegistro extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 // agregando datos al usuario
-                usuario.setusuario(txtNombre.getText());
+                usuario.setusuario(txtUsuario.getText());
                 usuario.setContrasena(txtPassword.getText());
                 usuario.setNombre(txtNombre.getText());
                 usuario.setCorreo(txtMMail.getText());

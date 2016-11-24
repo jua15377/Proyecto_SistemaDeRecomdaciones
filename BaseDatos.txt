@@ -32,13 +32,13 @@ create (PlantasBuffeadas: Proyectos{nombre: 'PlantasBuffeadas'})
 create (HallazgosArtisticos: Proyecto{nombre: 'HallazgosArtisticos'})
 create (DronesParaCuevasSubterraneas: Proyecto{nombre: 'DronesParaCuevasSubterraneas'})
 
-create (PurinaDogChow: Empresa)
-create (Brainz: Empresa)
-create (Google: Empresa)
-create (AgroProductos: Empresa)
-create (MecanoCreaciones: Empresa)
-create (NoticiasPuntuales:Empresa)
-create (GeologiaDelMundo:Empresa)
+create (PurinaDogChow: Empresa{nombre: 'PurinaDogChow'})
+create (Brainz: Empresa{nombre: 'Brainz'})
+create (Google: Empresa{nombre: 'Google'})
+create (AgroProductos: Empresa{nombre: 'AgroProductos'})
+create (MecanoCreaciones: Empresa{nombre: 'MecanoCreaciones'})
+create (NoticiasPuntuales:Empresa{nombre: 'NoticiasPuntuales'})
+create (GeologiaDelMundo:Empresa{nombre: 'GeologiaDelMundo'})
 
 
 Create

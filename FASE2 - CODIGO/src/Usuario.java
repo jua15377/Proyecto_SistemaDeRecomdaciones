@@ -22,7 +22,7 @@ public class Usuario {
     private final String[] lenguajes = {"Java", "C++", "Python", "C", "MySQL", ".Net", "SQLite", "C#", "JavaScript", "php", "ARM", "Cypher"};
     private boolean[] conocimiento = new boolean[12];
 
-    public final String[] temas = {"Ciencias Formales", "Ciencias Sociales", "Relaciones Humanas", "Entretenimiento", "Naturaleza", "Ciencias Naturales", "Arte", "Tecnologia"};
+    public final String[] temas = {"CienciasFormales", "CienciasSociales", "RelacionesHumanas", "Entretenimiento", "Naturaleza", "CienciasNaturales", "Arte", "Tecnologia"};
 
     private int edad;
     private int telefono;

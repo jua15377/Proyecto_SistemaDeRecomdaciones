@@ -42,7 +42,7 @@ public class Conexion {
 
     public void crearUsuario(Usuario e){
         try {
-            stmt.executeUpdate("CREATE(" +e.getNombre()+ ":Usuario{usuario:'" +e.getUsuario() + "',contrasena:'" + e.getContrasena() +  "',name:'" +e.getNombre()+ "',correo:'" +e.getCorreo()+ "',edad:'" +e.getEdad()+ "',direccion:'" + e.getDireccion() + "',telefono:'" + e.getTelefono() + "',horarioEntrada:'" + e.getHorarioInicio() + "',horarioSalida:'" + e.getHorarioFinal() + "'})");
+            stmt.executeUpdate("CREATE(" +e.getUsuario()+ ":Usuario{usuario:'" +e.getUsuario() + "',contrasena:'" + e.getContrasena() +  "',nombre:'" +e.getNombre()+ "',correo:'" +e.getCorreo()+ "',edad:'" +e.getEdad()+ "',direccion:'" + e.getDireccion() + "',telefono:'" + e.getTelefono() + "',horarioEntrada:'" + e.getHorarioInicio() + "',horarioSalida:'" + e.getHorarioFinal() + "'})");
             con.close();
         } catch (SQLException e1) {
             e1.printStackTrace();
@@ -51,7 +51,7 @@ public class Conexion {
 
     public void crearEmpresa(Empresa r){
         try {
-            stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{name:'"+r.getNombre()+"',pbx:'"+r.getpbx()+"',ubicacion:'"+r.getDireccion()+"'})");
+            stmt.executeUpdate("CREATE("+r.getNombre()+":Empresa{nombre:'"+r.getNombre()+"',pbx:'"+r.getpbx()+"',ubicacion:'"+r.getDireccion()+"'})");
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -59,17 +59,21 @@ public class Conexion {
     }
 
 
-    public void unirIntereses(Usuario e ){
+    public void unirIntereses(Usuario e ) {
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres1()+  ")");
-            con.close();
+            stmt.executeUpdate("MATCH (n:Usuario {usuario: '" + e.getUsuario() + "'})"+
+                               "MATCH (x:Interes {nombre:'" + e.getInteres1() + "'})"+
+                               "MERGE(n)-[:leInteresa]->(x)");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
+    }
 
+    public void unirIntereses2(Usuario e ){
         try {
-            stmt.executeUpdate("CREATE(" + e.getNombre()+ ")-[:leInteresa]->(" + e.getInteres2()+  ")");
-            con.close();
+            stmt.executeUpdate("MATCH (n:Usuario {usuario: '" + e.getUsuario() + "'})"+
+                               "MATCH (x:Interes {nombre:'" + e.getInteres2() + "'})"+
+                               "MERGE(n)-[:leInteresa]->(x)");
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
@@ -81,12 +85,14 @@ public class Conexion {
         ArrayList<String> temas = new ArrayList<>();
 
         try {
-            ResultSet rs = stmt.executeQuery("MATCH (Usuario{name: '"+ e.getNombre()+"'})-{:leInteresa}->(tema)<-[:leInteresa]-(Empresa) return Empresa");
+            ResultSet rs = stmt.executeQuery("MATCH (u:Usuario{nombre: '"+ e.getNombre()+"'})" +
+                                             "MATCH (u)-[:leInteresa]->(tema:Interes)<-[:leInteresa]-(e:Empresa) return e");
             int i = 0;
             while(rs.next()){
-                Map map = (Map)rs.getObject("Empresa");
-                String s = map.get("name").toString();
+                Map map = (Map)rs.getObject("e");
+                String s = map.get("nombre").toString();
                 retorno.add(s);
+
             }
 
 
